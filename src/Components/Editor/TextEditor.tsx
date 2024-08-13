@@ -10,6 +10,7 @@ import './styles.css';
 import SplitToSegmentOnEnter from "./extensions/SplitText.extension";
 import MergeSegmentOnBackspace from "./extensions/MergeSegment.extension";
 import SegmentExtension from "./nodes/Segment/Segment.extension";
+import WordMark from "./nodes/Word/WordMark";
 
 interface TextEditorProps {
   id: string;
@@ -27,7 +28,8 @@ export default function TextEditor({ id, content}: TextEditorProps) {
       StarterKit,
       Bold,
       Italic,
-      SegmentExtension
+      SegmentExtension,
+      WordMark,
     ],
     content: jsonSample, // Set the initial content with data-id
     // onUpdate: ({ editor }) => {

@@ -1,14 +1,21 @@
+import { formatTime } from '@/utils/utils'
 import { DownOutlined, PlusOutlined } from '@ant-design/icons'
 import { NodeViewContent, NodeViewWrapper } from '@tiptap/react'
 import { Dropdown } from 'antd'
 import React from 'react'
 
-export default () => {
+export default (props:any) => {
+    const {start, end, speaker} = props.node.attrs
+
+    console.log(start, end, speaker)
   return (
     <NodeViewWrapper className="w-full p-2 bg-red">
       {/* <label contentEditable={false} className='m-2'>Segment Component</label> */}
       <div
 			className="flex items-start w-full gap-4 mt-6 p-2 hover:bg-gray-100 rounded-lg"
+            data-start={start}
+            data-end={end}
+            data-speaker={speaker}
 		>
             <div className="w-1/6 mt-8">
 				<Dropdown
@@ -43,8 +50,7 @@ export default () => {
 					disabled={true}
 					readOnly={true}
 					type="text"
-                    value={"00:00:01"}
-					// value={formatTime(segment.start)}
+                    value={formatTime(start)}
 				/>
                 <NodeViewContent className="p-2" />
 			</div>
