@@ -40,8 +40,8 @@ export default function Segment({ segment, appendSegment , mergeSegment}: Segmen
           id={segment.id}
           content={segment.words.map((word) => word.word).join(" ")}
           // onUpdate={handleUpdate}
-          appendSegment={appendSegment}
-          mergeSegment={mergeSegment}
+          // appendSegment={appendSegment}
+          // mergeSegment={mergeSegment}
         />
       </div>
     </div>

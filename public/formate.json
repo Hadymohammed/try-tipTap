@@ -1,0 +1,66 @@
+{
+    "type": "doc",
+    "content": [
+      {
+        "type": "segment",
+        "attrs":{
+            "id": "1",
+            "speaker": "Speaker 1",
+            "start": 0.0,
+            "end": 5.0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Hello everyone welcome to the meeting"
+          }
+        ]
+      },
+      {
+        "type": "segment",
+        "attrs":{
+            "id": "2",
+            "speaker": "Speaker 2",
+            "start": 5.1,
+            "end": 10.0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Thank you for joining us today"
+          }
+        ]
+      },
+      {
+        "type": "segment",
+        "attrs":{
+            "id": "3",
+            "speaker": "Speaker 1",
+            "start": 10.1,
+            "end": 15.0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "We have a lot to discuss"
+          }
+        ]
+      },
+      {
+        "type": "segment",
+        "attrs":{
+            "id": "4",
+            "speaker": "Speaker 2",
+            "start": 15.1,
+            "end": 20.0
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Let's begin with the agenda"
+          }
+        ]
+      }
+    ]
+  }
+  

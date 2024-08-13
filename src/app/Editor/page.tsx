@@ -6,7 +6,9 @@ export default function page() {
         <div>
             <h1>Editor Page</h1>
             <div className="flex justify-center">
-                <EditorBlock />
+                <div className="w-2/3">
+                    <EditorBlock />
+                </div>
             </div>
         </div>
     )

@@ -9,40 +9,27 @@ import Toolbar from "./toolbar/toolbar";
 import './styles.css';
 import SplitToSegmentOnEnter from "./extensions/SplitText.extension";
 import MergeSegmentOnBackspace from "./extensions/MergeSegment.extension";
+import SegmentExtension from "./nodes/Segment/Segment.extension";
 
 interface TextEditorProps {
   id: string;
   content: string;
   // onUpdate: (updatedContent: string) => void;
-  appendSegment: (content: string, segmentId: string) => void;
-  mergeSegment: (segmentId: string) => void;
+  // appendSegment: (content: string, segmentId: string) => void;
+  // mergeSegment: (segmentId: string) => void;
 }
 
-export default function TextEditor({ id, content, appendSegment , mergeSegment}: TextEditorProps) {
+export default function TextEditor({ id, content}: TextEditorProps) {
+  // read json file
+  const jsonSample = require("../../../public/formate.json");
   const editor = useEditor({
     extensions: [
-      StarterKit.configure({
-        paragraph: false, // Disable the default paragraph extension
-      }),
-      Paragraph.configure({
-        HTMLAttributes: {
-          segmentId: id, // Pass the segment ID as data-id
-        },
-      }),
+      StarterKit,
       Bold,
       Italic,
-      SplitToSegmentOnEnter.configure({
-        splitHandler: (content, segmentId) => {
-          appendSegment(content, segmentId);
-        },
-      }),
-      MergeSegmentOnBackspace.configure({
-        mergeHandler: (segmentId) => {
-          mergeSegment(segmentId);
-        },
-      }),
+      SegmentExtension
     ],
-    content: `<p data-id="${id}">${content}</p>`, // Set the initial content with data-id
+    content: jsonSample, // Set the initial content with data-id
     // onUpdate: ({ editor }) => {
     //   const updatedContent = editor.getHTML();
     //   onUpdate(updatedContent);

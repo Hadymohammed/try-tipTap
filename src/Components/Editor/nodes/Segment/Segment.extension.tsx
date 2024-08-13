@@ -3,7 +3,7 @@ import { ReactNodeViewRenderer } from '@tiptap/react'
 import Segment from './Segment'
 
 export default Node.create({
-  name: 'segmentComponent',
+  name: 'segment',
 
   group: 'block',
 
